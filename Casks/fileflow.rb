@@ -7,7 +7,7 @@ cask "fileflow" do
   desc "macOS menu bar app that automatically organizes your Downloads folder"
   homepage "https://github.com/peluboy/FileFlow"
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "FileFlow.app"
 

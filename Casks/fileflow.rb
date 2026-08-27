@@ -1,6 +1,6 @@
 cask "fileflow" do
   version "1.2.0"
-  sha256 "99f26ea0555de2989e7ed761973a9b6f49f8e25c11dd2c26cd0561a5af7f79c0"
+  sha256 "108ab82c17018629d7403978f064f77e8d33c55f488b7101eac02ee0011930fe"
 
   url "https://github.com/peluboy/FileFlow/releases/download/v#{version}/FileFlow.dmg"
   name "FileFlow"

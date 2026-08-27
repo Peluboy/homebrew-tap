@@ -1,6 +1,6 @@
 cask "filedocket" do
   version "1.2.0"
-  sha256 "aeba0dfc720c6e90d80b577f7b05a6522f6a12a599aa56456f0bc136655c0516"
+  sha256 "0bba713439a6f5319719b6194558cb6d46ef18a6c979a1ceda7b0d8d2203e4ed"
   url "https://github.com/Peluboy/FileDocket/releases/download/v#{version}/FileDocket.dmg"
   name "FileDocket"
   desc "Automatic downloads folder organizer for macOS"

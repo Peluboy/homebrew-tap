@@ -1,6 +1,6 @@
 # Peluboy Homebrew Tap
 
-A Homebrew tap for installing [FileFlow](https://github.com/Peluboy/FileFlow) and other apps by Peluboy.
+A Homebrew tap for installing [FileDocket](https://github.com/Peluboy/FileDocket) and other apps by Peluboy.
 
 ## Install
 
@@ -10,23 +10,23 @@ First, make sure you have [Homebrew](https://brew.sh) installed:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Then tap this repo and install FileFlow:
+Then tap this repo and install FileDocket:
 
 ```bash
 brew tap peluboy/homebrew-tap
-brew install --cask fileflow
+brew install --cask filedocket
 ```
 
 ## Updating
 
 ```bash
-brew upgrade --cask fileflow
+brew upgrade --cask filedocket
 ```
 
 ## Uninstalling
 
 ```bash
-brew uninstall --cask fileflow
+brew uninstall --cask filedocket
 brew untap peluboy/homebrew-tap
 ```
 

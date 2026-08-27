@@ -4,7 +4,7 @@ Install [FileDocket](https://github.com/Peluboy/FileDocket) with Homebrew.
 
 ```bash
 brew tap peluboy/tap
-brew install --cask --no-quarantine filedocket
+brew install --cask filedocket
 ```
 
 `brew tap peluboy/tap` clones this repository (`Peluboy/homebrew-tap`).

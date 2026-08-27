@@ -11,7 +11,7 @@ cask "filedocket" do
     skip "Version is bumped with the tap tag"
   end
 
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "FileDocket.app"
 

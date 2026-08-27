@@ -16,6 +16,20 @@ cask "filedocket" do
 
   app "FileDocket.app"
 
+  # Ad-hoc signed; strip quarantine so first launch is not blocked by Gatekeeper.
+  postflight do
+    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/FileDocket.app"]
+  end
+
+  caveats <<~EOS
+    FileDocket is not notarized. If macOS says it cannot be opened, do not
+    double-click. In Finder: Control-click FileDocket → Open → Open.
+
+    If Open Anyway never appears in System Settings, run:
+      xattr -cr /Applications/FileDocket.app
+    then Control-click → Open again.
+  EOS
+
   zap trash: [
     "~/.file-organizer",
     "~/Library/LaunchAgents/com.filedocket.login.plist",

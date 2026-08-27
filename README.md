@@ -1,12 +1,11 @@
 # FileDocket Homebrew Tap
 
-Install [FileDocket](https://github.com/Peluboy/FileDocket) with Homebrew.
+Install [FileDocket](https://github.com/Peluboy/FileDocket) with Homebrew:
 
 ```bash
-brew tap peluboy/tap
-brew install --cask filedocket
+brew install --cask peluboy/tap/filedocket
 ```
 
-`brew tap peluboy/tap` clones this repository (`Peluboy/homebrew-tap`).
+That one command taps this repo, trusts only the FileDocket cask, and installs it. If you previously tapped `peluboy/filedocket` as well, run `brew untap peluboy/filedocket` first.
 
-Requires macOS 12 or later. The app is not notarized. Homebrew strips quarantine on install. If macOS still blocks it, Control-click FileDocket in Applications → Open → Open. If Open Anyway never appears in Settings, run `xattr -cr /Applications/FileDocket.app` then Control-click Open again.
+Requires macOS 12 or later. The app is not notarized. If macOS blocks first launch, Control-click FileDocket in Applications → Open → Open, or run `xattr -cr /Applications/FileDocket.app`.

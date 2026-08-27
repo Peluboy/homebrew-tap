@@ -1,6 +1,6 @@
 cask "filedocket" do
   version "1.2.0"
-  sha256 "9c17e654b12f72a5a12237cd7d75760d5ba6fb2b23f9cdb773c96af9786ed5bb"
+  sha256 "aacdfce3ba4be456f65dde6ef0e19715f69290f2aec75f1049bef2a4fd38c101"
 
   url "https://github.com/Peluboy/FileDocket/releases/download/v#{version}/FileDocket.dmg"
   name "FileDocket"

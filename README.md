@@ -10,7 +10,13 @@ That script uses Homebrew when `brew` is on PATH, otherwise it downloads the DMG
 
 Homebrew only: `brew install --cask peluboy/tap/filedocket`
 
-Uninstall:
+Update:
+
+```bash
+brew upgrade --cask peluboy/tap/filedocket
+```
+
+Or run the one-line installer again. Settings stay.
 
 ```bash
 brew uninstall --cask peluboy/tap/filedocket

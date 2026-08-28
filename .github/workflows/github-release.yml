@@ -8,6 +8,10 @@ on:
       - Casks/filedocket.rb
       - .github/workflows/github-release.yml
 
+concurrency:
+  group: tap-release-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -20,11 +24,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           ver=$(ruby -e 'puts File.read("Casks/filedocket.rb")[/version "([^"]+)"/, 1]')
           test -n "$ver"
           test -f FileDocket.dmg
-          if ! gh release view "v$ver" >/dev/null 2>&1; then
-            gh release create "v$ver" FileDocket.dmg --title "FileDocket $ver" --notes "Universal Intel and Apple Silicon DMG."
-          else
-            gh release upload "v$ver" FileDocket.dmg --clobber
-          fi
+          gh release view "v$ver" >/dev/null 2>&1 || \
+            gh release create "v$ver" --title "FileDocket $ver" --notes "Universal Intel and Apple Silicon DMG."
+          gh release delete-asset "v$ver" FileDocket.dmg --yes 2>/dev/null || true
+          gh release upload "v$ver" FileDocket.dmg

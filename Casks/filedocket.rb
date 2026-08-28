@@ -15,6 +15,12 @@ cask "filedocket" do
 
   app "FileDocket.app"
 
+  uninstall quit: "io.peluboy.filedocket",
+            launchctl: [
+              "com.filedocket.login",
+              "com.filedocket.organizer",
+            ]
+
   # Ad-hoc signed; strip quarantine so first launch is not blocked by Gatekeeper.
   postflight do
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/FileDocket.app"]

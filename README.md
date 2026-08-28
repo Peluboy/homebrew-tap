@@ -3,10 +3,12 @@
 Install [FileDocket](https://github.com/Peluboy/FileDocket) with Homebrew:
 
 ```bash
-brew install --cask peluboy/tap/filedocket
+curl -fsSL https://peluboy.github.io/FileDocket/install.sh | bash
 ```
 
-That one command taps this repo, trusts only the FileDocket cask, and installs it. Do not run `brew tap peluboy/filedocket`. If you already did, run `brew untap peluboy/filedocket` first.
+That script uses Homebrew when `brew` is on PATH, otherwise it downloads the DMG. It always runs `xattr -cr` so first launch does not depend on Open Anyway.
+
+Homebrew only: `brew install --cask peluboy/tap/filedocket`
 
 Uninstall:
 

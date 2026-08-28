@@ -1,6 +1,6 @@
 cask "filedocket" do
-  version "1.2.0"
-  sha256 "79e8363db813fa6f6b50a3bc58baf43db878f495c4d84db133660e4a602ad612"
+  version "1.2.1"
+  sha256 "7010c1ced8ac38acb339adee8ba029537310037a1f459eb85153114debdb228e"
 
   url "https://github.com/Peluboy/homebrew-tap/raw/refs/tags/v#{version}/FileDocket.dmg"
   name "FileDocket"
@@ -21,12 +21,13 @@ cask "filedocket" do
   end
 
   caveats <<~EOS
-    FileDocket is not notarized. If macOS says it cannot be opened, do not
-    double-click. In Finder: Control-click FileDocket → Open → Open.
+    FileDocket is not notarized. On macOS Sequoia and later, open the app
+    once, click Done, then System Settings → Privacy & Security → Security
+    → Open Anyway. Homebrew already strips quarantine, so this is often
+    unnecessary.
 
-    If Open Anyway never appears in System Settings, run:
+    If Open Anyway never appears:
       xattr -cr /Applications/FileDocket.app
-    then Control-click → Open again.
   EOS
 
   zap trash: [

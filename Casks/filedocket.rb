@@ -1,6 +1,6 @@
 cask "filedocket" do
-  version "1.2.2"
-  sha256 "8e06f952aad3728b61613e528e5b271fc8ccf7dcfcc1662f05eaf49899493260"
+  version "1.2.3"
+  sha256 "90f91bee447dadf09553fe0fc97f027f845a87cc44e3280cfc80ebb19ef40d0e"
 
   url "https://github.com/Peluboy/homebrew-tap/raw/refs/tags/v#{version}/FileDocket.dmg"
   name "FileDocket"

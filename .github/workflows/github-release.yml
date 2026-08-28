@@ -1,0 +1,30 @@
+name: GitHub Release
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - FileDocket.dmg
+      - Casks/filedocket.rb
+      - .github/workflows/github-release.yml
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Publish tagged DMG
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ver=$(ruby -e 'puts File.read("Casks/filedocket.rb")[/version "([^"]+)"/, 1]')
+          test -n "$ver"
+          test -f FileDocket.dmg
+          if ! gh release view "v$ver" >/dev/null 2>&1; then
+            gh release create "v$ver" FileDocket.dmg --title "FileDocket $ver" --notes "Universal Intel and Apple Silicon DMG."
+          else
+            gh release upload "v$ver" FileDocket.dmg --clobber
+          fi
